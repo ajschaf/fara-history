@@ -41,11 +41,5 @@ add_and_commit () {
 git config --global user.email "farabot@example.com"
 git config --global user.name "Farabot"
 
-fetch_and_diff FARA_All_Registrants "https://efile.fara.gov/bulk/zip/FARA_All_Registrants.csv.zip" "--key=Registration_Number"
-add_and_commit FARA_All_Registrants
 fetch_and_sort FARA_All_RegistrantDocs "https://efile.fara.gov/bulk/zip/FARA_All_RegistrantDocs.csv.zip"
 add_and_commit FARA_All_RegistrantDocs
-fetch_and_sort FARA_All_ShortForms "https://efile.fara.gov/bulk/zip/FARA_All_ShortForms.csv.zip"
-add_and_commit FARA_All_ShortForms
-fetch_and_sort FARA_All_ForeignPrincipals "https://efile.fara.gov/bulk/zip/FARA_All_ForeignPrincipals.csv.zip"
-add_and_commit FARA_All_ForeignPrincipals

@@ -1,6 +1,1 @@
 csv-diff
-datasette
-sqlite-utils
-datasette-atom
-datasette-graphql
-datasette-search-all
