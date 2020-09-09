@@ -3,7 +3,7 @@ name: Fetch latest data and commit
 on:
   repository_dispatch:
   schedule:
-    - cron:  '30 05,17 * * *'
+    - cron:  '30 09 * * *'
 
 jobs:
   scheduled:
