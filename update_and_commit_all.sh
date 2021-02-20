@@ -16,7 +16,7 @@ fetch_and_sort () {
     # Construct new CSV with heading line + sorted other lines
     python sort_csv.py $csv_unsorted > $csv
     echo "Updated $csv" > $commit_txt
-    echo "$(git log -p $csv --oneline --pretty="@%h"  --stat   |grep -v \| |  tr "\n" " "  |  tr "@" "\n")" >> $commit_txt
+    echo "$(git log --oneline --pretty="@%h"  --stat   |grep -v \| |  tr "\n" " "  |  tr "@" "\n")" >> $commit_txt
 }
 
 fetch_and_diff () {
