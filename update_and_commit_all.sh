@@ -9,7 +9,7 @@ fetch_and_sort () {
     local csv_old="$1.csv.old"
     local commit_txt="$1.commit.txt"
     mv $csv $csv_old
-    curl -s -o $zip $2
+    curl -k -s -o $zip $2
     unzip -q -o $zip
     # This should have created the .csv file
     mv $csv $csv_unsorted
