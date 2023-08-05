@@ -15,7 +15,7 @@ jobs:
         fetch-depth: 0
     - name: Fetch latest data
       run: |-
-        curl "https://efile.fara.gov/bulk/zip/FARA_All_RegistrantDocs.csv.zip" > "FARA_All_RegistrantDocs.csv.zip"
+        curl -k "https://efile.fara.gov/bulk/zip/FARA_All_RegistrantDocs.csv.zip" > "FARA_All_RegistrantDocs.csv.zip"
         unzip -q -o "FARA_All_RegistrantDocs.csv.zip"
     - name: Commit and push if it changed
       run: |-
