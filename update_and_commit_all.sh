@@ -18,19 +18,9 @@ fetch_and_sort () {
     echo "$(git log --oneline --pretty="@%h"  --stat   |grep -v \| |  tr "\n" " "  |  tr "@" "\n")" >> $commit_txt
 }
 
-fetch_and_diff () {
-    fetch_and_sort $1 $2
-    local csv_diff_args=$3
-    local csv="$1.csv"
-    local csv_old="$1.csv.old"
-    local commit_txt="$1.commit.txt"
-    csv-diff $csv_old $csv $csv_diff_args > $commit_txt
-    echo $'\n[skip ci]' >> $commit_txt
-}
-
 add_and_commit () {
     local csv="$1.csv"
-    local commit_txt="$1.commit.txt"
+#    local commit_txt="$1.commit.txt"
     git add $csv
     git commit -F $commit_txt && \
         git push -q origin master \
