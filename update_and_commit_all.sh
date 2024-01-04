@@ -19,11 +19,12 @@ fetch_and_sort () {
 }
 
 add_and_commit () {
-    local csv="$1.csv"
-    git add $csv
-	message=$(git log --oneline --pretty)
- 	git commit -m "${message}" || exit 0
-  	git push
+	local csv="$1.csv"
+	echo "Updated $csv" > $commit_txt
+	git add $csv
+		message=$(git log --pretty --compact-summary)
+ 		git commit -m "${message}" || exit 0
+  		git push
 }
 
 git config --global user.email "farabot@example.com"
