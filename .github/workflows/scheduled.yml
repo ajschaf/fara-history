@@ -2,8 +2,9 @@ name: Fetch latest data and commit
 
 on:
   repository_dispatch:
+  workflow_dispatch:
   schedule:
-    - cron:  '1 11 * * *'
+    - cron:  '12 11 * * *'
 
 jobs:
   scheduled:
